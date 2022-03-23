@@ -23,7 +23,7 @@ function _interopNamespace(e) {
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 
 var TestingComponent = function () {
-    return React__namespace.createElement("button", null, "Salvar");
+    return React__namespace.createElement("button", null, "Confirmar");
 };
 
 exports["default"] = TestingComponent;
