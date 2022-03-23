@@ -22,9 +22,9 @@ function _interopNamespace(e) {
 
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 
-var TestingComponent = function () {
+var ButtonComponent = function () {
     return React__namespace.createElement("button", null, "Confirmar");
 };
 
-exports["default"] = TestingComponent;
+exports["default"] = ButtonComponent;
 //# sourceMappingURL=index.js.map

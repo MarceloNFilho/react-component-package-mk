@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-const TestingComponent: React.FC = () => {
+const ButtonComponent: React.FC = () => {
   return <button>Confirmar</button>
 }
 
-export default TestingComponent;
+export default ButtonComponent;
