@@ -6,8 +6,11 @@ export interface CallApiProps {
   key: String;
   shelter_id: String
 }
+export interface ObjectProps {
+  props: CallApiProps;
+}
 
-export function ButtonComponent (props: CallApiProps) {
+export function ButtonComponent ({props}: ObjectProps) {
   
   async function callApi({key, shelter_id}: CallApiProps){
     let navigate = useNavigate();

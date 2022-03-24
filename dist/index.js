@@ -80,7 +80,8 @@ function __generator(thisArg, body) {
     }
 }
 
-function ButtonComponent(props) {
+function ButtonComponent(_a) {
+    var props = _a.props;
     function callApi(_a) {
         var key = _a.key, shelter_id = _a.shelter_id;
         return __awaiter(this, void 0, void 0, function () {
