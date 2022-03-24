@@ -79,7 +79,8 @@ function __generator(thisArg, body) {
     }
 }
 
-function ButtonComponent(repoOwner) {
+var ButtonComponent = function (_a) {
+    var repoOwner = _a.repoOwner;
     console.log('repoOwner: ', repoOwner);
     function callApi(repoOwner) {
         return __awaiter(this, void 0, void 0, function () {
@@ -97,7 +98,7 @@ function ButtonComponent(repoOwner) {
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
         React__namespace.createElement("button", { onClick: function () { return callApi(repoOwner); } }, "DESGRA\u00C7AAAAA")));
-}
+};
 
 exports.ButtonComponent = ButtonComponent;
 //# sourceMappingURL=index.js.map

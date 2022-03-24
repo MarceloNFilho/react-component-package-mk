@@ -1,7 +1,8 @@
 import axios from 'axios';
 import * as React from 'react';
 
-export function ButtonComponent (repoOwner: String) {
+export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
+  
   console.log('repoOwner: ', repoOwner)
   async function callApi(repoOwner: String){
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
