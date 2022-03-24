@@ -9,9 +9,9 @@ export interface ObjectProps {
 }
 
 export function ButtonComponent ({props}: ObjectProps) {
-  
-  async function callApi({key, shelter_id}: CallApiProps){
-    return await axios.get(`https://api.adoptapet.com/search/pets_at_shelter?key=${key}output=xml&shelter_id=${shelter_id}`)
+  console.log(props)
+  async function callApi(){
+    return await axios.get('https://api.github.com/orgs/rocketseat/repos')
     .then(() => {
       console.log('funrufou')
     })
@@ -21,7 +21,7 @@ export function ButtonComponent ({props}: ObjectProps) {
       <span>
         Teste N° 375647356758678787867999999
       </span>
-      <button onClick={() => callApi(props)}>
+      <button onClick={() => callApi()}>
         DESGRAÇAAAAA
       </button>
     </>

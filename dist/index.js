@@ -81,23 +81,23 @@ function __generator(thisArg, body) {
 
 function ButtonComponent(_a) {
     var props = _a.props;
-    function callApi(_a) {
-        var key = _a.key, shelter_id = _a.shelter_id;
+    console.log(props);
+    function callApi() {
         return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, axios__default["default"].get("https://api.adoptapet.com/search/pets_at_shelter?key=".concat(key, "output=xml&shelter_id=").concat(shelter_id))
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, axios__default["default"].get('https://api.github.com/orgs/rocketseat/repos')
                             .then(function () {
                             console.log('funrufou');
                         })];
-                    case 1: return [2 /*return*/, _b.sent()];
+                    case 1: return [2 /*return*/, _a.sent()];
                 }
             });
         });
     }
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return callApi(props); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return callApi(); } }, "DESGRA\u00C7AAAAA")));
 }
 
 exports.ButtonComponent = ButtonComponent;
