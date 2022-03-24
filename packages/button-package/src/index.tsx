@@ -1,12 +1,9 @@
 import axios from 'axios';
 import * as React from 'react';
-interface OwnerProps {
-  repoOwner: string;
-}
 
-export function ButtonComponent (repoOwner: OwnerProps) {
+export function ButtonComponent (repoOwner: String) {
   console.log('repoOwner: ', repoOwner)
-  async function callApi(repoOwner: OwnerProps){
+  async function callApi(repoOwner: String){
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(() => {
       console.log('funrufou')
