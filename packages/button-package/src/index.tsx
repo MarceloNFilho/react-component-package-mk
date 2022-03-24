@@ -4,7 +4,7 @@ const ButtonComponent: React.FC = () => {
   return (
     <>
       <span>
-        Teste N° 37564735675876575
+        Teste N° 375647356758678787686
       </span>
       <button>
         DESGRAÇAAAAA

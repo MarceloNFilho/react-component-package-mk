@@ -1,7 +1,7 @@
 {
   "name": "@react-component-package-mk/button-package",
   "version": "1.0.0",
-  "main": "dist/index.tsx",
+  "main": "dist/index.js",
   "license": "MIT",
   "private": false,
   "publicConfig": {
