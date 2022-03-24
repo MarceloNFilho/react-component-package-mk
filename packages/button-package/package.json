@@ -1,10 +1,10 @@
 {
-  "name": "@react-component-package-mk/button-package",
+  "name": "@react-component-package-mkplace/button-package",
   "version": "1.1.2",
   "main": "dist/index.js",
   "license": "MIT",
   "publicConfig": {
     "access": "public"
   },
-  "gitHead": "92e5606cf7aa076067a886330028a758b7ef0061"
+  "gitHead": "7e86d22989760bb3cfe4bc589078203d9a248418"
 }
