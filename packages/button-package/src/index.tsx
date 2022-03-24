@@ -1,10 +1,13 @@
 import axios from 'axios';
 import * as React from 'react';
+interface OwnerProps {
+  repoOwner: string;
+}
 
-export function ButtonComponent (owner: String) {
+export function ButtonComponent (repoOwner: OwnerProps) {
   
-  async function callApi(owner: String){
-    return await axios.get(`https://api.github.com/orgs/${owner}/repos`)
+  async function callApi(repoOwner: OwnerProps){
+    return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(() => {
       console.log('funrufou')
     })
@@ -14,7 +17,7 @@ export function ButtonComponent (owner: String) {
       <span>
         Teste N° 375647356758678787867999999
       </span>
-      <button onClick={() => callApi(owner)}>
+      <button onClick={() => callApi(repoOwner)}>
         DESGRAÇAAAAA
       </button>
     </>

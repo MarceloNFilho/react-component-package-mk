@@ -1,2 +1,6 @@
 /// <reference types="react" />
-export declare function ButtonComponent(owner: String): JSX.Element;
+interface OwnerProps {
+    repoOwner: string;
+}
+export declare function ButtonComponent(repoOwner: OwnerProps): JSX.Element;
+export {};

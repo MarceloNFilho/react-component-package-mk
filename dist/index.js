@@ -79,12 +79,12 @@ function __generator(thisArg, body) {
     }
 }
 
-function ButtonComponent(owner) {
-    function callApi(owner) {
+function ButtonComponent(repoOwner) {
+    function callApi(repoOwner) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(owner, "/repos"))
+                    case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
                             .then(function () {
                             console.log('funrufou');
                         })];
@@ -95,7 +95,7 @@ function ButtonComponent(owner) {
     }
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return callApi(owner); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return callApi(repoOwner); } }, "DESGRA\u00C7AAAAA")));
 }
 
 exports.ButtonComponent = ButtonComponent;
