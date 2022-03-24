@@ -2,7 +2,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var axios = require('axios');
 var React = require('react');
-var reactRouterDom = require('react-router-dom');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -85,16 +84,12 @@ function ButtonComponent(_a) {
     function callApi(_a) {
         var key = _a.key, shelter_id = _a.shelter_id;
         return __awaiter(this, void 0, void 0, function () {
-            var navigate;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0:
-                        navigate = reactRouterDom.useNavigate();
-                        return [4 /*yield*/, axios__default["default"].get("https://api.adoptapet.com/search/pets_at_shelter?key=".concat(key, "output=xml&shelter_id=").concat(shelter_id))
-                                .then(function () {
-                                console.log('funrufou');
-                                navigate('/home');
-                            })];
+                    case 0: return [4 /*yield*/, axios__default["default"].get("https://api.adoptapet.com/search/pets_at_shelter?key=".concat(key, "output=xml&shelter_id=").concat(shelter_id))
+                            .then(function () {
+                            console.log('funrufou');
+                        })];
                     case 1: return [2 /*return*/, _b.sent()];
                 }
             });
