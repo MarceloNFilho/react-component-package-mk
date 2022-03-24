@@ -7,16 +7,16 @@ export interface CallApiProps {
   shelter_id: String
 }
 
-const callApi = ({key, shelter_id}: CallApiProps) => {
-  let navigate = useNavigate();
-  return axios.get(`https://api.adoptapet.com/search/pets_at_shelter?key=${key}output=xml&shelter_id=${shelter_id}`)
-  .then(() => {
-    console.log('funrufou')
-    navigate('/home', {replace: true})
-  })
-}
-
-export const ButtonComponent: React.FC<{props: CallApiProps}> = ({props}) => {
+export function ButtonComponent (props: CallApiProps) {
+  
+  async function callApi({key, shelter_id}: CallApiProps){
+    let navigate = useNavigate();
+    return await axios.get(`https://api.adoptapet.com/search/pets_at_shelter?key=${key}output=xml&shelter_id=${shelter_id}`)
+    .then(() => {
+      console.log('funrufou')
+      navigate('/home')
+    })
+  }
   return (
     <>
       <span>

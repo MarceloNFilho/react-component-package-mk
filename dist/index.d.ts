@@ -1,8 +1,6 @@
-import * as React from 'react';
+/// <reference types="react" />
 export interface CallApiProps {
     key: String;
     shelter_id: String;
 }
-export declare const ButtonComponent: React.FC<{
-    props: CallApiProps;
-}>;
+export declare function ButtonComponent(props: CallApiProps): JSX.Element;
