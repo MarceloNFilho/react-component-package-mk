@@ -2,5 +2,9 @@
   "name": "@react-component-package-mk/button-package",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "private": false,
+  "publicConfig": {
+    "access": "public"
+  }
 }
