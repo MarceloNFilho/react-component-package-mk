@@ -2,7 +2,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var axios = require('axios');
 var React = require('react');
-var reactRouterDom = require('react-router-dom');
+var router = require('next/router');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -85,15 +85,15 @@ var ButtonComponent = function (_a) {
     console.log('repoOwner: ', repoOwner);
     function callApi(repoOwner) {
         return __awaiter(this, void 0, void 0, function () {
-            var navigate;
+            var router$1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        navigate = reactRouterDom.useNavigate();
+                        router$1 = router.useRouter();
                         return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
                                 .then(function () {
                                 console.log('funrufou');
-                                navigate('/home');
+                                router$1.push('/home');
                             })];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
