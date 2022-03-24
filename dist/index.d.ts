@@ -1,7 +1,9 @@
 import * as React from 'react';
-declare type CallApiProps = {
+interface CallApiProps {
     key: String;
     shelter_id: String;
-};
-declare const ButtonComponent: React.FC<CallApiProps>;
+}
+declare const ButtonComponent: React.FC<{
+    props: CallApiProps;
+}>;
 export default ButtonComponent;

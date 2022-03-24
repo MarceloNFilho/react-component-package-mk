@@ -27,8 +27,8 @@ function _interopNamespace(e) {
 var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 
-//@ts-ignore
-var callApi = function (key, shelter_id) {
+var callApi = function (_a) {
+    var key = _a.key, shelter_id = _a.shelter_id;
     var history = reactRouterDom.useNavigate();
     return axios__default["default"].get("https://api.adoptapet.com/search/pets_at_shelter?key=".concat(key, "output=xml&shelter_id=").concat(shelter_id))
         .then(function () {
@@ -36,10 +36,11 @@ var callApi = function (key, shelter_id) {
         history('/qualquer');
     });
 };
-var ButtonComponent = function (key, shelter_id) {
+var ButtonComponent = function (_a) {
+    var props = _a.props;
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return callApi(key, shelter_id); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return callApi(props); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports["default"] = ButtonComponent;
