@@ -2,7 +2,10 @@ import axios from 'axios';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom'
 
-
+type CallApiProps = {
+  key: String,
+  shelter_id: String
+}
 //@ts-ignore
 const callApi = (key, shelter_id) => {
   let history = useNavigate();
@@ -13,7 +16,7 @@ const callApi = (key, shelter_id) => {
   })
 }
 
-const ButtonComponent: React.FC = (key, shelter_id) => {
+const ButtonComponent: React.FC<CallApiProps> = (key, shelter_id) => {
   return (
     <>
       <span>
