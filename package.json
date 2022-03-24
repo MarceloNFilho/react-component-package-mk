@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "main": "dist/index.js",
   "license": "MIT",
+  "private": false,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
