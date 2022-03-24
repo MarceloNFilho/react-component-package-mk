@@ -1,7 +1,16 @@
 import * as React from 'react';
 
 const ButtonComponent: React.FC = () => {
-  return <button>Hello World</button>
+  return (
+    <>
+      <span>
+        Teste N° 375647356473489
+      </span>
+      <button>
+        DESGRAÇAAAAA
+      </button>)
+    </>
+  )
 }
 
 export default ButtonComponent;
