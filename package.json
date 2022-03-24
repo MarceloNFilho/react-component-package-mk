@@ -1,6 +1,6 @@
 {
   "name": "react-component-package-mk",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
   "private": false,
