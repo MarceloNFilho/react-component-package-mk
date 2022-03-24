@@ -1,9 +1,9 @@
 {
   "name": "react-component-package-mk",
-  "version": "1.0.6",
-  "main": "dist/index.js",
+  "version": "1.0.1",
+  "main": "dist/index.tsx",
   "license": "MIT",
-  "private": false,
+   "private": false,
   "workspaces": [
     "packages/*"
   ],
