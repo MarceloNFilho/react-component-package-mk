@@ -24,7 +24,7 @@ var React__namespace = /*#__PURE__*/_interopNamespace(React);
 
 var ButtonComponent = function () {
     return (React__namespace.createElement(React__namespace.Fragment, null,
-        React__namespace.createElement("span", null, "Teste N\u00B0 375647356473489"),
+        React__namespace.createElement("span", null, "Teste N\u00B0 375647356473543"),
         React__namespace.createElement("button", null, "DESGRA\u00C7AAAAA"),
         ")"));
 };
