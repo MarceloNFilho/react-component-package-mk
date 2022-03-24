@@ -5,7 +5,7 @@ interface OwnerProps {
 }
 
 export function ButtonComponent (repoOwner: OwnerProps) {
-  
+  console.log('repoOwner: ', repoOwner)
   async function callApi(repoOwner: OwnerProps){
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(() => {

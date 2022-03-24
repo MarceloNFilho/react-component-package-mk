@@ -80,6 +80,7 @@ function __generator(thisArg, body) {
 }
 
 function ButtonComponent(repoOwner) {
+    console.log('repoOwner: ', repoOwner);
     function callApi(repoOwner) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
