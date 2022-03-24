@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom'
 
-interface CallApiProps {
+export interface CallApiProps {
   key: String;
   shelter_id: String
 }
@@ -16,7 +16,7 @@ const callApi = ({key, shelter_id}: CallApiProps) => {
   })
 }
 
-const ButtonComponent: React.FC<{props: CallApiProps}> = ({props}) => {
+export const ButtonComponent: React.FC<{props: CallApiProps}> = ({props}) => {
   return (
     <>
       <span>
@@ -28,5 +28,3 @@ const ButtonComponent: React.FC<{props: CallApiProps}> = ({props}) => {
     </>
   )
 }
-
-export default ButtonComponent;

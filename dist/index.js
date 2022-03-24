@@ -43,5 +43,5 @@ var ButtonComponent = function (_a) {
         React__namespace.createElement("button", { onClick: function () { return callApi(props); } }, "DESGRA\u00C7AAAAA")));
 };
 
-exports["default"] = ButtonComponent;
+exports.ButtonComponent = ButtonComponent;
 //# sourceMappingURL=index.js.map
