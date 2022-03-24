@@ -1,6 +1,10 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var axios = require('axios');
 var React = require('react');
+var reactRouterDom = require('react-router-dom');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 function _interopNamespace(e) {
   if (e && e.__esModule) return e;
@@ -20,12 +24,22 @@ function _interopNamespace(e) {
   return Object.freeze(n);
 }
 
+var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 
-var ButtonComponent = function () {
+//@ts-ignore
+var callApi = function (key, shelter_id) {
+    var history = reactRouterDom.useNavigate();
+    return axios__default["default"].get("https://api.adoptapet.com/search/pets_at_shelter?key=".concat(key, "output=xml&shelter_id=").concat(shelter_id))
+        .then(function () {
+        console.log('funrufou');
+        history('/qualquer');
+    });
+};
+var ButtonComponent = function (key, shelter_id) {
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", null, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return callApi(key, shelter_id); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports["default"] = ButtonComponent;
