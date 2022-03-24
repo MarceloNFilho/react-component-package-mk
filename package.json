@@ -4,6 +4,9 @@
   "main": "dist/index.js",
   "license": "MIT",
   "private": false,
+  "publicConfig": {
+    "access": "public"
+  },
   "workspaces": [
     "packages/*"
   ],
