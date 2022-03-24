@@ -8,11 +8,11 @@ export interface CallApiProps {
 }
 
 const callApi = ({key, shelter_id}: CallApiProps) => {
-  let history = useNavigate();
+  let navigate = useNavigate();
   return axios.get(`https://api.adoptapet.com/search/pets_at_shelter?key=${key}output=xml&shelter_id=${shelter_id}`)
   .then(() => {
     console.log('funrufou')
-    history('/qualquer')
+    navigate('/home', {replace: true})
   })
 }
 

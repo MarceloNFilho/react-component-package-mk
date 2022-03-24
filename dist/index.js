@@ -29,11 +29,11 @@ var React__namespace = /*#__PURE__*/_interopNamespace(React);
 
 var callApi = function (_a) {
     var key = _a.key, shelter_id = _a.shelter_id;
-    var history = reactRouterDom.useNavigate();
+    var navigate = reactRouterDom.useNavigate();
     return axios__default["default"].get("https://api.adoptapet.com/search/pets_at_shelter?key=".concat(key, "output=xml&shelter_id=").concat(shelter_id))
         .then(function () {
         console.log('funrufou');
-        history('/qualquer');
+        navigate('/home', { replace: true });
     });
 };
 var ButtonComponent = function (_a) {
