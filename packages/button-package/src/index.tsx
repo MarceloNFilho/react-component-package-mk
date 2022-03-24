@@ -8,7 +8,7 @@ const ButtonComponent: React.FC = () => {
       </span>
       <button>
         DESGRAÇAAAAA
-      </button>)
+      </button>
     </>
   )
 }
