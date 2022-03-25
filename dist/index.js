@@ -2,7 +2,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var axios = require('axios');
 var React = require('react');
-var router$1 = require('next/router');
+var router = require('next/router');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -80,12 +80,13 @@ function __generator(thisArg, body) {
     }
 }
 
-var router = router$1.useRouter();
 function handleSuccess() {
-    router.push('/gluteo-direito');
+    var router$1 = router.useRouter();
+    router$1.push('/gluteo-direito');
 }
 function handleError() {
-    router.push('/gluteo-esquerdo');
+    var router$1 = router.useRouter();
+    router$1.push('/gluteo-esquerdo');
 }
 function handleButtonClick(repoOwner) {
     return __awaiter(this, void 0, void 0, function () {

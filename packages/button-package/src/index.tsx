@@ -2,13 +2,14 @@ import axios from 'axios';
 import * as React from 'react';
 import { useRouter } from 'next/router';
 
-const router = useRouter();
 
 function handleSuccess(){
+  const router = useRouter();
   router.push('/gluteo-direito')
 }
 
 function handleError(){
+  const router = useRouter();
   router.push('/gluteo-esquerdo')
 }
 
