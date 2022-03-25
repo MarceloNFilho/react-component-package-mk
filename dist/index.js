@@ -91,7 +91,7 @@ var ButtonComponent = function (_a) {
                 case 1:
                     response = _a.sent();
                     console.log(response.data);
-                    router$1.push('/rota2');
+                    router$1.push('/rota1');
                     event.preventDefault();
                     return [2 /*return*/];
             }
