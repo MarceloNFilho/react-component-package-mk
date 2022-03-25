@@ -6,8 +6,8 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   console.log('repoOwner: ', repoOwner)
   async function callApi(repoOwner: String){
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
-    .then(() => {
-      console.log('funrufou')
+    .then((res) => {
+      console.log(res)
       window.location.assign('www.google.com');
     })
   }

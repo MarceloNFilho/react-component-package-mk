@@ -87,8 +87,8 @@ var ButtonComponent = function (_a) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
-                            .then(function () {
-                            console.log('funrufou');
+                            .then(function (res) {
+                            console.log(res);
                             window.location.assign('www.google.com');
                         })];
                     case 1: return [2 /*return*/, _a.sent()];
