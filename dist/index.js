@@ -110,7 +110,7 @@ var ButtonComponent = function (_a) {
     var handleError = function () {
         return new Promise(function () {
             router$1.push('/gluteo-esquerdo');
-            return;
+            return 'erro';
         });
     };
     console.log(repoOwner);

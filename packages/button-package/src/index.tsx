@@ -31,7 +31,7 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   const handleError = () => {
     return new Promise<void>(() => {
       router.push('/gluteo-esquerdo');
-      return;
+      return 'erro';
     })
   }
 
