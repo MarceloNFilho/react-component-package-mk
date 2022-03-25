@@ -80,20 +80,37 @@ function __generator(thisArg, body) {
     }
 }
 
-var handleButtonClick = function (repoOwner, handleSuccess) { return __awaiter(void 0, void 0, void 0, function () {
+var handleButtonClick = function (repoOwner, handleSuccess, handleError) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, new Promise(function () { return __awaiter(void 0, void 0, void 0, function () {
                     return __generator(this, function (_a) {
                         switch (_a.label) {
-                            case 0:
-                                return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
-                                        .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
-                                        return __generator(this, function (_a) {
-                                            alert(res.data);
-                                            return [2 /*return*/];
-                                        });
-                                    }); })];
+                            case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
+                                    .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
+                                    return __generator(this, function (_a) {
+                                        switch (_a.label) {
+                                            case 0:
+                                                alert(res.data);
+                                                return [4 /*yield*/, handleSuccess];
+                                            case 1:
+                                                _a.sent();
+                                                return [2 /*return*/];
+                                        }
+                                    });
+                                }); })
+                                    .catch(function (err) { return __awaiter(void 0, void 0, void 0, function () {
+                                    return __generator(this, function (_a) {
+                                        switch (_a.label) {
+                                            case 0:
+                                                alert(err);
+                                                return [4 /*yield*/, handleError];
+                                            case 1:
+                                                _a.sent();
+                                                return [2 /*return*/];
+                                        }
+                                    });
+                                }); })];
                             case 1: return [2 /*return*/, _a.sent()];
                         }
                     });
@@ -109,22 +126,27 @@ var ButtonComponent = function (_a) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, new Promise(function () {
-                        router$1.push('/gluteo-direito');
+                        router$1.push('/ok');
                         return;
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
     }); };
-    // const handleError = async () => {
-    //   return await new Promise<void>(() => {
-    //     router.push('/gluteo-esquerdo');
-    //     return;
-    //   })
-    // }
+    var handleError = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, new Promise(function () {
+                        router$1.push('/error');
+                        return;
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess()); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess(), handleError()); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;
