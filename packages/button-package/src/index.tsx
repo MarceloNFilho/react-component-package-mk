@@ -23,20 +23,14 @@ const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleEr
 export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   const router = useRouter();
 
-  const handleSuccess = async () => {
-    return await new Promise<void>(() => {
-      alert('success')
+  const handleSuccess = () => {
       router.push('/rota1');
       return;
-    })
   }
 
   const handleError = async () => {
-    return await new Promise<void>(() => {
-      alert("suck's ass")
       router.push('/rota2');
       return;
-    })
   }
   
   return (

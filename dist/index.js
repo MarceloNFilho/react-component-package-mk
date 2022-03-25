@@ -122,28 +122,14 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
 var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
     var router$1 = router.useRouter();
-    var handleSuccess = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function () {
-                        alert('success');
-                        router$1.push('/rota1');
-                        return;
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
-    }); };
+    var handleSuccess = function () {
+        router$1.push('/rota1');
+        return;
+    };
     var handleError = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function () {
-                        alert("suck's ass");
-                        router$1.push('/rota2');
-                        return;
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+            router$1.push('/rota2');
+            return [2 /*return*/];
         });
     }); };
     return (React__namespace.createElement(React__namespace.Fragment, null,
