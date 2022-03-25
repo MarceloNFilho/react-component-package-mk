@@ -90,7 +90,9 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                                     .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
                                         switch (_a.label) {
-                                            case 0: return [4 /*yield*/, alert(res.data)];
+                                            case 0:
+                                                alert(res.data);
+                                                return [4 /*yield*/, handleSuccess];
                                             case 1:
                                                 _a.sent();
                                                 return [2 /*return*/];
@@ -100,7 +102,9 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                                     .catch(function (err) { return __awaiter(void 0, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
                                         switch (_a.label) {
-                                            case 0: return [4 /*yield*/, alert(err)];
+                                            case 0:
+                                                alert(err);
+                                                return [4 /*yield*/, handleError];
                                             case 1:
                                                 _a.sent();
                                                 return [2 /*return*/];
@@ -140,7 +144,6 @@ var ButtonComponent = function (_a) {
             }
         });
     }); };
-    console.log(repoOwner);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
         React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess(), handleError()); } }, "DESGRA\u00C7AAAAA")));
