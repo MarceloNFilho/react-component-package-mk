@@ -80,15 +80,15 @@ function __generator(thisArg, body) {
     }
 }
 
-var handleSuccess = function () {
-    var router$1 = router.useRouter();
-    router$1.push('/gluteo-direito');
-};
 // const handleError = () => {
 //   const router = useRouter();
 //   router.push('/gluteo-esquerdo')
 // }
 var handleButtonClick = function (repoOwner) {
+    var handleSuccess = function () {
+        var router$1 = router.useRouter();
+        router$1.push('/gluteo-direito');
+    };
     return new Promise(function (resolve) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

@@ -2,18 +2,16 @@ import axios from 'axios';
 import * as React from 'react';
 import { useRouter } from 'next/router';
 
-
-const handleSuccess = () => {
-  const router = useRouter();
-  router.push('/gluteo-direito')
-}
-
 // const handleError = () => {
 //   const router = useRouter();
 //   router.push('/gluteo-esquerdo')
 // }
 
 const handleButtonClick = (repoOwner: String) => {
+  const handleSuccess = () => {
+    const router = useRouter();
+    router.push('/gluteo-direito')
+  }
 
   return new Promise<String>(async resolve => {
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
