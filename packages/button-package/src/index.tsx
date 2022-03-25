@@ -1,45 +1,21 @@
-import axios from 'axios';
 import * as React from 'react';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 
-const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleError: any) => {
-  return await new Promise<void>(async (resolve) => {
-    let ahue: any
-    await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
-    .then(async (res) => {
-      ahue = res
-    })
-    .catch(async (err) => {
-      ahue = err
-    })
-    alert(ahue)
-    setTimeout( () => {
-      if(ahue){
-        resolve(handleSuccess);
-      }
-      else{
-        resolve(handleError);
-      }
-    }, 1500);
-  });
+
+type ButtonProps = {
+  repoOwner: string
 }
  
-export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
+export const ButtonComponent: React.FC<ButtonProps> = ({ repoOwner }) => {
   const router = useRouter();
 
-  const handleSuccess = async () => {
-    return await new Promise<void>(() => {
-      router.push('/rota1');
-      return;
-    })
-  }
-
-  const handleError = async () => {
-    return await new Promise<void>(() => {
-      router.push('/rota2');
-      return;
-    })
-  }
+  const handleClickButton = React.useCallback(async (event: React.MouseEvent<HTMLElement>) => {
+    const response = await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`);
+    console.log(response.data)
+    router.push('/rota1');
+    event.preventDefault();
+  }, [router])
   
   return (
     <>
@@ -47,10 +23,7 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
         Teste N° 375647356758678787867999999
       </span>
       <button 
-        onClick={(e) => {
-          handleButtonClick(repoOwner, handleSuccess(), handleError())
-          e.preventDefault()
-        }}
+        onClick={handleClickButton}
       >
         DESGRAÇAAAAA
       </button>

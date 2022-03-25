@@ -1,4 +1,6 @@
 import * as React from 'react';
-export declare const ButtonComponent: React.FC<{
-    repoOwner: String;
-}>;
+declare type ButtonProps = {
+    repoOwner: string;
+};
+export declare const ButtonComponent: React.FC<ButtonProps>;
+export {};

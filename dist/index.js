@@ -1,7 +1,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var axios = require('axios');
 var React = require('react');
+var axios = require('axios');
 var router = require('next/router');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -24,8 +24,8 @@ function _interopNamespace(e) {
     return Object.freeze(n);
 }
 
-var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
+var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -80,76 +80,26 @@ function __generator(thisArg, body) {
     }
 }
 
-var handleButtonClick = function (repoOwner, handleSuccess, handleError) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, new Promise(function (resolve) { return __awaiter(void 0, void 0, void 0, function () {
-                    var ahue;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
-                                    .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
-                                    return __generator(this, function (_a) {
-                                        ahue = res;
-                                        return [2 /*return*/];
-                                    });
-                                }); })
-                                    .catch(function (err) { return __awaiter(void 0, void 0, void 0, function () {
-                                    return __generator(this, function (_a) {
-                                        ahue = err;
-                                        return [2 /*return*/];
-                                    });
-                                }); })];
-                            case 1:
-                                _a.sent();
-                                alert(ahue);
-                                setTimeout(function () {
-                                    if (ahue) {
-                                        resolve(handleSuccess);
-                                    }
-                                    else {
-                                        resolve(handleError);
-                                    }
-                                }, 1500);
-                                return [2 /*return*/];
-                        }
-                    });
-                }); })];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
-    });
-}); };
 var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
     var router$1 = router.useRouter();
-    var handleSuccess = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var handleClickButton = React__namespace.useCallback(function (event) { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function () {
-                        router$1.push('/rota1');
-                        return;
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
+                case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))];
+                case 1:
+                    response = _a.sent();
+                    console.log(response.data);
+                    router$1.push('/rota1');
+                    event.preventDefault();
+                    return [2 /*return*/];
             }
         });
-    }); };
-    var handleError = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function () {
-                        router$1.push('/rota2');
-                        return;
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
-    }); };
+    }); }, [router$1]);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function (e) {
-                handleButtonClick(repoOwner, handleSuccess(), handleError());
-                e.preventDefault();
-            } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: handleClickButton }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;
