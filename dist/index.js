@@ -80,11 +80,7 @@ function __generator(thisArg, body) {
     }
 }
 
-// const handleError = () => {
-//   const router = useRouter();
-//   router.push('/gluteo-esquerdo')
-// }
-var handleButtonClick = function (repoOwner, handleSuccess) {
+var handleButtonClick = function (repoOwner, handleSuccess, handleError) {
     return new Promise(function (resolve) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -93,19 +89,11 @@ var handleButtonClick = function (repoOwner, handleSuccess) {
                         alert(res.data);
                         resolve('');
                     })
-                    // .catch(err => {
-                    //   alert(err);
-                    //   handleError()
-                    //   resolve('');
-                    // })
-                ];
-                case 1: return [2 /*return*/, _a.sent()
-                    // .catch(err => {
-                    //   alert(err);
-                    //   handleError()
-                    //   resolve('');
-                    // })
-                ];
+                        .catch(function (err) {
+                        alert(err);
+                        resolve('');
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
             }
         });
     }); });
@@ -116,10 +104,13 @@ var ButtonComponent = function (_a) {
     var handleSuccess = function () {
         router$1.push('/gluteo-direito');
     };
+    var handleError = function () {
+        router$1.push('/gluteo-esquerdo');
+    };
     console.log(repoOwner);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess()); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess(), handleError()); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;
