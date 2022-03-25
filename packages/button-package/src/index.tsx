@@ -8,10 +8,10 @@ const handleSuccess = () => {
   router.push('/gluteo-direito')
 }
 
-const handleError = () => {
-  const router = useRouter();
-  router.push('/gluteo-esquerdo')
-}
+// const handleError = () => {
+//   const router = useRouter();
+//   router.push('/gluteo-esquerdo')
+// }
 
 const handleButtonClick = (repoOwner: String) => {
 
@@ -22,11 +22,11 @@ const handleButtonClick = (repoOwner: String) => {
       handleSuccess()
       resolve('');
     })
-    .catch(err => {
-      alert(err);
-      handleError()
-      resolve('');
-    })
+    // .catch(err => {
+    //   alert(err);
+    //   handleError()
+    //   resolve('');
+    // })
   });
 }
  

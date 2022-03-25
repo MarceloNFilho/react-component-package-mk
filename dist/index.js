@@ -84,10 +84,10 @@ var handleSuccess = function () {
     var router$1 = router.useRouter();
     router$1.push('/gluteo-direito');
 };
-var handleError = function () {
-    var router$1 = router.useRouter();
-    router$1.push('/gluteo-esquerdo');
-};
+// const handleError = () => {
+//   const router = useRouter();
+//   router.push('/gluteo-esquerdo')
+// }
 var handleButtonClick = function (repoOwner) {
     return new Promise(function (resolve) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -98,12 +98,19 @@ var handleButtonClick = function (repoOwner) {
                         handleSuccess();
                         resolve('');
                     })
-                        .catch(function (err) {
-                        alert(err);
-                        handleError();
-                        resolve('');
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
+                    // .catch(err => {
+                    //   alert(err);
+                    //   handleError()
+                    //   resolve('');
+                    // })
+                ];
+                case 1: return [2 /*return*/, _a.sent()
+                    // .catch(err => {
+                    //   alert(err);
+                    //   handleError()
+                    //   resolve('');
+                    // })
+                ];
             }
         });
     }); });
