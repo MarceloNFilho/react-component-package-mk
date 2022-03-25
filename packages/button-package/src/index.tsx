@@ -7,13 +7,17 @@ const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleEr
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(async (res) => {
       alert(res.data);
-      await handleSuccess;
-      return;
+      if(res.data){
+        await handleSuccess;
+        return;
+      }
     })
     .catch(async (err) => {
       alert(err);
-      await handleError;
-      return;
+      if(err){
+        await handleError;
+        return;
+      }
     })
   });
 }
@@ -23,6 +27,7 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
 
   const handleSuccess = async () => {
     return await new Promise<void>(() => {
+      alert('success')
       router.push('/rota1');
       return;
     })
@@ -30,6 +35,7 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
 
   const handleError = async () => {
     return await new Promise<void>(() => {
+      alert("suck's ass")
       router.push('/rota2');
       return;
     })

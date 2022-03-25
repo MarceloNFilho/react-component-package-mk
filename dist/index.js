@@ -92,10 +92,12 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                                         switch (_a.label) {
                                             case 0:
                                                 alert(res.data);
+                                                if (!res.data) return [3 /*break*/, 2];
                                                 return [4 /*yield*/, handleSuccess];
                                             case 1:
                                                 _a.sent();
                                                 return [2 /*return*/];
+                                            case 2: return [2 /*return*/];
                                         }
                                     });
                                 }); })
@@ -104,10 +106,12 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                                         switch (_a.label) {
                                             case 0:
                                                 alert(err);
+                                                if (!err) return [3 /*break*/, 2];
                                                 return [4 /*yield*/, handleError];
                                             case 1:
                                                 _a.sent();
                                                 return [2 /*return*/];
+                                            case 2: return [2 /*return*/];
                                         }
                                     });
                                 }); })];
@@ -126,6 +130,7 @@ var ButtonComponent = function (_a) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, new Promise(function () {
+                        alert('success');
                         router$1.push('/rota1');
                         return;
                     })];
@@ -137,6 +142,7 @@ var ButtonComponent = function (_a) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, new Promise(function () {
+                        alert("suck's ass");
                         router$1.push('/rota2');
                         return;
                     })];
