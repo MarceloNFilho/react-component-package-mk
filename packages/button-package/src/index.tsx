@@ -5,20 +5,23 @@ import { useRouter } from 'next/router';
 export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   
   console.log('repoOwner: ', repoOwner)
+  const router = useRouter();
   async function callApi(repoOwner: String){
-    const router = useRouter();
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then((res) => {
       console.log(res)
-      router.push('/home')
     })
+  }
+  console.log(callApi)
+  function handleClick() {
+    router.push('/home')
   }
   return (
     <>
       <span>
         Teste N° 375647356758678787867999999
       </span>
-      <button onClick={() => callApi(repoOwner)}>
+      <button onClick={() => handleClick}>
         DESGRAÇAAAAA
       </button>
     </>
