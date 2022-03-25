@@ -87,18 +87,16 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                     return __generator(this, function (_a) {
                         switch (_a.label) {
                             case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
-                                    .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
+                                    .then(function () { return __awaiter(void 0, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
-                                        alert(res.data);
                                         setTimeout(function () {
                                             resolve(handleSuccess);
                                         }, 1500);
                                         return [2 /*return*/];
                                     });
                                 }); })
-                                    .catch(function (err) { return __awaiter(void 0, void 0, void 0, function () {
+                                    .catch(function () { return __awaiter(void 0, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
-                                        alert(err);
                                         setTimeout(function () {
                                             resolve(handleError);
                                         }, 1500);
@@ -140,7 +138,10 @@ var ButtonComponent = function (_a) {
     }); };
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess(), handleError()); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function (e) {
+                handleButtonClick(repoOwner, handleSuccess(), handleError());
+                e.preventDefault();
+            } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;
