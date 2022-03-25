@@ -2,17 +2,17 @@ import axios from 'axios';
 import * as React from 'react';
 import { useRouter } from 'next/router';
 
-const handleButtonClick = (repoOwner: String, handleSuccess: any, handleError: any) => {
-  return new Promise<void>(async () => {
+const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleError: any) => {
+  return await new Promise<void>(async () => {
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
-    .then(res => {
+    .then(async (res) => {
       alert(res.data);
-      handleSuccess;
+      await handleSuccess;
       return;
     })
-    .catch(err => {
+    .catch(async (err) => {
       alert(err);
-      handleError;
+      await handleError;
       return;
     })
   });
@@ -21,17 +21,17 @@ const handleButtonClick = (repoOwner: String, handleSuccess: any, handleError: a
 export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   const router = useRouter();
 
-  const handleSuccess = () => {
-    return new Promise<void>(() => {
+  const handleSuccess = async () => {
+    return await new Promise<void>(() => {
       router.push('/gluteo-direito');
       return;
     })
   }
 
-  const handleError = () => {
-    return new Promise<void>(() => {
+  const handleError = async () => {
+    return await new Promise<void>(() => {
       router.push('/gluteo-esquerdo');
-      return 'erro';
+      return;
     })
   }
 
