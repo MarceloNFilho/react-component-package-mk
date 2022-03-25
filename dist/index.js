@@ -2,7 +2,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var axios = require('axios');
 var React = require('react');
-var router = require('next/router');
+var router$1 = require('next/router');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -80,24 +80,29 @@ function __generator(thisArg, body) {
     }
 }
 
+var router = router$1.useRouter();
+function handleSuccess() {
+    router.push('/gluteo-direito');
+}
+function handleError() {
+    router.push('/gluteo-esquerdo');
+}
 function handleButtonClick(repoOwner) {
     return __awaiter(this, void 0, void 0, function () {
-        var router$1;
         var _this = this;
         return __generator(this, function (_a) {
-            router$1 = router.useRouter();
             return [2 /*return*/, new Promise(function (resolve) { return __awaiter(_this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
                         switch (_a.label) {
                             case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
                                     .then(function (res) {
                                     alert(res.data);
-                                    router$1.push('/home');
+                                    handleSuccess();
                                     resolve('');
                                 })
                                     .catch(function (err) {
                                     alert(err);
-                                    router$1.push('/error');
+                                    handleError();
                                     resolve('');
                                 })];
                             case 1: return [2 /*return*/, _a.sent()];
