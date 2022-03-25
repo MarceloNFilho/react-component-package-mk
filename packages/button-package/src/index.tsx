@@ -6,22 +6,29 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   
   console.log('repoOwner: ', repoOwner)
   const router = useRouter();
+  
+  function handleSuccess() {
+    router.push('/home')
+  }
+
+  function handleError() {
+    router.push('/error')
+  }
   async function callApi(repoOwner: String){
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then((res) => {
-      console.log(res)
+      handleSuccess()
+    }).catch((err) => {
+      handleError();
     })
   }
   console.log(callApi)
-  function handleClick() {
-    router.push('/home')
-  }
   return (
     <>
       <span>
         Teste N° 375647356758678787867999999
       </span>
-      <button onClick={() => handleClick()}>
+      <button onClick={() => callApi(repoOwner)}>
         DESGRAÇAAAAA
       </button>
     </>
