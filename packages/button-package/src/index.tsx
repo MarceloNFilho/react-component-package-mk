@@ -4,17 +4,23 @@ import { useRouter } from 'next/router';
 
 const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleError: any) => {
   return await new Promise<void>(async (resolve) => {
-    return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
-    .then(async () => {
-      setTimeout( () => {
+    let ahue: any
+    await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
+    .then(async (res) => {
+      ahue = res
+    })
+    .catch(async (err) => {
+      ahue = err
+    })
+    alert(ahue)
+    setTimeout( () => {
+      if(ahue){
         resolve(handleSuccess);
-      }, 1500);
-    })
-    .catch(async () => {
-      setTimeout( () => {
+      }
+      else{
         resolve(handleError);
+      }
     }, 1500);
-    })
   });
 }
  
