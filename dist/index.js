@@ -80,39 +80,34 @@ function __generator(thisArg, body) {
     }
 }
 
-function handleSuccess() {
+var handleSuccess = function () {
     var router$1 = router.useRouter();
     router$1.push('/gluteo-direito');
-}
-function handleError() {
+};
+var handleError = function () {
     var router$1 = router.useRouter();
     router$1.push('/gluteo-esquerdo');
-}
-function handleButtonClick(repoOwner) {
-    return __awaiter(this, void 0, void 0, function () {
-        var _this = this;
+};
+var handleButtonClick = function (repoOwner) {
+    return new Promise(function (resolve) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, new Promise(function (resolve) { return __awaiter(_this, void 0, void 0, function () {
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
-                                    .then(function (res) {
-                                    alert(res.data);
-                                    handleSuccess();
-                                    resolve('');
-                                })
-                                    .catch(function (err) {
-                                    alert(err);
-                                    handleError();
-                                    resolve('');
-                                })];
-                            case 1: return [2 /*return*/, _a.sent()];
-                        }
-                    });
-                }); })];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
+                        .then(function (res) {
+                        alert(res.data);
+                        handleSuccess();
+                        resolve('');
+                    })
+                        .catch(function (err) {
+                        alert(err);
+                        handleError();
+                        resolve('');
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
         });
-    });
-}
+    }); });
+};
 var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
     return (React__namespace.createElement(React__namespace.Fragment, null,

@@ -3,17 +3,17 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 
 
-function handleSuccess(){
+const handleSuccess = () => {
   const router = useRouter();
   router.push('/gluteo-direito')
 }
 
-function handleError(){
+const handleError = () => {
   const router = useRouter();
   router.push('/gluteo-esquerdo')
 }
 
-async function handleButtonClick(repoOwner: String) {
+const handleButtonClick = (repoOwner: String) => {
 
   return new Promise<String>(async resolve => {
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
