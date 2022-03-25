@@ -23,14 +23,14 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
 
   const handleSuccess = async () => {
     return await new Promise<void>(() => {
-      router.push('/ok');
+      router.push('/rota1');
       return;
     })
   }
 
   const handleError = async () => {
     return await new Promise<void>(() => {
-      router.push('/error');
+      router.push('/rota2');
       return;
     })
   }

@@ -126,7 +126,7 @@ var ButtonComponent = function (_a) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, new Promise(function () {
-                        router$1.push('/ok');
+                        router$1.push('/rota1');
                         return;
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
@@ -137,7 +137,7 @@ var ButtonComponent = function (_a) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, new Promise(function () {
-                        router$1.push('/error');
+                        router$1.push('/rota2');
                         return;
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
