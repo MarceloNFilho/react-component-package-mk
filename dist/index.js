@@ -103,7 +103,7 @@ var ButtonComponent = function (_a) {
     }
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return handleClick; } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return handleClick(); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;

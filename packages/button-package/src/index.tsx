@@ -21,7 +21,7 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
       <span>
         Teste N° 375647356758678787867999999
       </span>
-      <button onClick={() => handleClick}>
+      <button onClick={() => handleClick()}>
         DESGRAÇAAAAA
       </button>
     </>
