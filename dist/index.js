@@ -94,7 +94,9 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                                                 alert(res.data);
                                                 if (!res.data) return [3 /*break*/, 2];
                                                 return [4 /*yield*/, handleSuccess];
-                                            case 1: return [2 /*return*/, _a.sent()];
+                                            case 1:
+                                                _a.sent();
+                                                return [2 /*return*/];
                                             case 2: return [2 /*return*/];
                                         }
                                     });
@@ -106,7 +108,9 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
                                                 alert(err);
                                                 if (!err) return [3 /*break*/, 2];
                                                 return [4 /*yield*/, handleError];
-                                            case 1: return [2 /*return*/, _a.sent()];
+                                            case 1:
+                                                _a.sent();
+                                                return [2 /*return*/];
                                             case 2: return [2 /*return*/];
                                         }
                                     });
@@ -122,14 +126,26 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) { retur
 var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
     var router$1 = router.useRouter();
-    var handleSuccess = function () {
-        router$1.push('/rota1');
-        return;
-    };
+    var handleSuccess = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, new Promise(function () {
+                        router$1.push('/rota1');
+                        return;
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
     var handleError = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            router$1.push('/rota2');
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, new Promise(function () {
+                        router$1.push('/rota2');
+                        return;
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
         });
     }); };
     return (React__namespace.createElement(React__namespace.Fragment, null,
