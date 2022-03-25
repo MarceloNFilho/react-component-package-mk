@@ -27,8 +27,9 @@ import { useRouter } from 'next/router';
 // }
  
 export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
+  const router = useRouter();
+
   const handleSuccess = () => {
-    const router = useRouter();
     router.push('/gluteo-direito')
   }
 

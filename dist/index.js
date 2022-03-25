@@ -45,8 +45,8 @@ var React__namespace = /*#__PURE__*/_interopNamespace(React);
 // }
 var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
+    var router$1 = router.useRouter();
     var handleSuccess = function () {
-        var router$1 = router.useRouter();
         router$1.push('/gluteo-direito');
     };
     console.log(repoOwner);
