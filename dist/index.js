@@ -86,19 +86,14 @@ var handleButtonClick = function (repoOwner, handleSuccess) { return __awaiter(v
             case 0: return [4 /*yield*/, new Promise(function () { return __awaiter(void 0, void 0, void 0, function () {
                     return __generator(this, function (_a) {
                         switch (_a.label) {
-                            case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
-                                    .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
-                                    return __generator(this, function (_a) {
-                                        switch (_a.label) {
-                                            case 0:
-                                                alert(res.data);
-                                                return [4 /*yield*/, handleSuccess];
-                                            case 1:
-                                                _a.sent();
-                                                return [2 /*return*/];
-                                        }
-                                    });
-                                }); })];
+                            case 0:
+                                return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
+                                        .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
+                                        return __generator(this, function (_a) {
+                                            alert(res.data);
+                                            return [2 /*return*/];
+                                        });
+                                    }); })];
                             case 1: return [2 /*return*/, _a.sent()];
                         }
                     });

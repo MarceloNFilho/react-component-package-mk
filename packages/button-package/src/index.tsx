@@ -4,10 +4,10 @@ import { useRouter } from 'next/router';
 
 const handleButtonClick = async (repoOwner: String, handleSuccess: any) => {
   return await new Promise<void>(async () => {
+    handleSuccess
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(async (res) => {
       alert(res.data);
-      await handleSuccess;
       return;
     })
   });
