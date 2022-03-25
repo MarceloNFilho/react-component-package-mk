@@ -2,6 +2,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var axios = require('axios');
 var React = require('react');
+var router = require('next/router');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -79,8 +80,7 @@ function __generator(thisArg, body) {
     }
 }
 
-// import { useRouter } from 'next/router';
-var handleButtonClick = function (repoOwner) { return __awaiter(void 0, void 0, void 0, function () {
+var handleButtonClick = function (repoOwner, handleSuccess, handleError) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, new Promise(function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -89,8 +89,22 @@ var handleButtonClick = function (repoOwner) { return __awaiter(void 0, void 0, 
                             case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
                                     .then(function (res) { return __awaiter(void 0, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
-                                        alert(res.data);
-                                        return [2 /*return*/];
+                                        switch (_a.label) {
+                                            case 0: return [4 /*yield*/, alert(res.data)];
+                                            case 1:
+                                                _a.sent();
+                                                return [2 /*return*/];
+                                        }
+                                    });
+                                }); })
+                                    .catch(function (err) { return __awaiter(void 0, void 0, void 0, function () {
+                                    return __generator(this, function (_a) {
+                                        switch (_a.label) {
+                                            case 0: return [4 /*yield*/, alert(err)];
+                                            case 1:
+                                                _a.sent();
+                                                return [2 /*return*/];
+                                        }
                                     });
                                 }); })];
                             case 1: return [2 /*return*/, _a.sent()];
@@ -102,24 +116,34 @@ var handleButtonClick = function (repoOwner) { return __awaiter(void 0, void 0, 
     });
 }); };
 var ButtonComponent = function (_a) {
-    // const router = useRouter();
     var repoOwner = _a.repoOwner;
-    // const handleSuccess = async () => {
-    //   return await new Promise<void>(() => {
-    //     router.push('/gluteo-direito');
-    //     return;
-    //   })
-    // }
-    // const handleError = async () => {
-    //   return await new Promise<void>(() => {
-    //     router.push('/gluteo-esquerdo');
-    //     return;
-    //   })
-    // }
+    var router$1 = router.useRouter();
+    var handleSuccess = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, new Promise(function () {
+                        router$1.push('/gluteo-direito');
+                        return;
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var handleError = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, new Promise(function () {
+                        router$1.push('/gluteo-esquerdo');
+                        return;
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
     console.log(repoOwner);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return handleButtonClick(repoOwner, handleSuccess(), handleError()); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;

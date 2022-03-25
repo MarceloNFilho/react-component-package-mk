@@ -1,33 +1,39 @@
 import axios from 'axios';
 import * as React from 'react';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
-const handleButtonClick = async (repoOwner: String) => {
+const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleError: any) => {
   return await new Promise<void>(async () => {
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(async (res) => {
-      alert(res.data);
+      await alert(res.data);
+      handleSuccess;
+      return;
+    })
+    .catch(async (err) => {
+      await alert(err);
+      handleError;
       return;
     })
   });
 }
  
 export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const handleSuccess = async () => {
-  //   return await new Promise<void>(() => {
-  //     router.push('/gluteo-direito');
-  //     return;
-  //   })
-  // }
+  const handleSuccess = async () => {
+    return await new Promise<void>(() => {
+      router.push('/gluteo-direito');
+      return;
+    })
+  }
 
-  // const handleError = async () => {
-  //   return await new Promise<void>(() => {
-  //     router.push('/gluteo-esquerdo');
-  //     return;
-  //   })
-  // }
+  const handleError = async () => {
+    return await new Promise<void>(() => {
+      router.push('/gluteo-esquerdo');
+      return;
+    })
+  }
 
   console.log(repoOwner);
   return (
@@ -35,7 +41,7 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
       <span>
         Teste N° 375647356758678787867999999
       </span>
-      <button onClick={() => handleButtonClick(repoOwner)}>
+      <button onClick={() => handleButtonClick(repoOwner, handleSuccess(), handleError())}>
         DESGRAÇAAAAA
       </button>
     </>
