@@ -84,6 +84,12 @@ var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
     console.log('repoOwner: ', repoOwner);
     var router$1 = router.useRouter();
+    function handleSuccess() {
+        return router$1.push('/home');
+    }
+    function handleError() {
+        return router$1.push('/error');
+    }
     function callApi(repoOwner) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -91,6 +97,10 @@ var ButtonComponent = function (_a) {
                     case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
                             .then(function (res) {
                             console.log(res);
+                            return handleSuccess();
+                        }).catch(function (err) {
+                            alert(err);
+                            return handleError();
                         })];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
@@ -98,12 +108,9 @@ var ButtonComponent = function (_a) {
         });
     }
     console.log(callApi);
-    function handleClick() {
-        router$1.push('/home');
-    }
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
-        React__namespace.createElement("button", { onClick: function () { return handleClick(); } }, "DESGRA\u00C7AAAAA")));
+        React__namespace.createElement("button", { onClick: function () { return callApi(repoOwner); } }, "DESGRA\u00C7AAAAA")));
 };
 
 exports.ButtonComponent = ButtonComponent;

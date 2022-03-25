@@ -8,18 +8,20 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   const router = useRouter();
   
   function handleSuccess() {
-    router.push('/home')
+    return router.push('/home')
   }
 
   function handleError() {
-    router.push('/error')
+    return router.push('/error')
   }
   async function callApi(repoOwner: String){
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then((res) => {
-      handleSuccess()
+      console.log(res)
+      return handleSuccess()
     }).catch((err) => {
-      handleError();
+      alert(err)
+      return handleError();
     })
   }
   console.log(callApi)
