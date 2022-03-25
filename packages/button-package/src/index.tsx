@@ -13,7 +13,7 @@ export const ButtonComponent: React.FC<ButtonProps> = ({ repoOwner }) => {
   const handleClickButton = React.useCallback(async (event: React.MouseEvent<HTMLElement>) => {
     const response = await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`);
     console.log(response.data)
-    router.push('/rota1');
+    router.push('/rota2');
     event.preventDefault();
   }, [router])
   
