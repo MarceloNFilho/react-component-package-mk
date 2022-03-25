@@ -5,17 +5,17 @@ import { useRouter } from 'next/router';
 const handleButtonClick = async (repoOwner: String, handleSuccess: any, handleError: any) => {
   return await new Promise<void>(async () => {
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
-    .then(async (res) => {
+    .then(res => {
       alert(res.data);
       if(res.data){
-        await handleSuccess;
+        handleSuccess;
         return;
       }
     })
-    .catch(async (err) => {
+    .catch(err => {
       alert(err);
       if(err){
-        await handleError;
+      handleError;
         return;
       }
     })
@@ -27,7 +27,6 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
 
   const handleSuccess = async () => {
     return await new Promise<void>(() => {
-      alert('success')
       router.push('/rota1');
       return;
     })
@@ -35,7 +34,6 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
 
   const handleError = async () => {
     return await new Promise<void>(() => {
-      alert("suck's ass")
       router.push('/rota2');
       return;
     })
