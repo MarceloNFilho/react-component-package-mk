@@ -87,11 +87,11 @@ var handleButtonClick = function (repoOwner, handleSuccess, handleError) {
                 case 0: return [4 /*yield*/, axios__default["default"].get("https://api.github.com/orgs/".concat(repoOwner, "/repos"))
                         .then(function (res) {
                         alert(res.data);
-                        resolve('');
+                        resolve();
                     })
                         .catch(function (err) {
                         alert(err);
-                        resolve('');
+                        resolve();
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
@@ -102,10 +102,16 @@ var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
     var router$1 = router.useRouter();
     var handleSuccess = function () {
-        router$1.push('/gluteo-direito');
+        return new Promise(function (resolve) {
+            router$1.push('/gluteo-direito');
+            resolve();
+        });
     };
     var handleError = function () {
-        router$1.push('/gluteo-esquerdo');
+        return new Promise(function (resolve) {
+            router$1.push('/gluteo-esquerdo');
+            resolve();
+        });
     };
     console.log(repoOwner);
     return (React__namespace.createElement(React__namespace.Fragment, null,

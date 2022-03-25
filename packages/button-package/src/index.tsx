@@ -2,19 +2,18 @@ import axios from 'axios';
 import * as React from 'react';
 import { useRouter } from 'next/router';
 
-const handleButtonClick = (repoOwner: String, handleSuccess: void, handleError: void) => {
-
-  return new Promise<String>(async resolve => {
+const handleButtonClick = (repoOwner: String, handleSuccess: any, handleError: any) => {
+  return new Promise<void>(async resolve => {
     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
     .then(res => {
       alert(res.data);
       handleSuccess;
-      resolve('');
+      resolve();
     })
     .catch(err => {
       alert(err);
       handleError;
-      resolve('');
+      resolve();
     })
   });
 }
@@ -23,11 +22,17 @@ export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
   const router = useRouter();
 
   const handleSuccess = () => {
-    router.push('/gluteo-direito')
+    return new Promise<void>(resolve => {
+      router.push('/gluteo-direito');
+      resolve();
+    })
   }
 
   const handleError = () => {
-    router.push('/gluteo-esquerdo')
+    return new Promise<void>(resolve => {
+      router.push('/gluteo-esquerdo');
+      resolve();
+    })
   }
 
   console.log(repoOwner);
