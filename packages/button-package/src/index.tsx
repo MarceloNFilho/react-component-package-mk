@@ -7,10 +7,7 @@ import { useRouter } from 'next/router';
 //   router.push('/gluteo-esquerdo')
 // }
 
-const handleSuccess = () => {
-  const router = useRouter();
-  router.push('/gluteo-direito')
-}
+
 
 // const handleButtonClick = (repoOwner: String) => {
 
@@ -30,6 +27,11 @@ const handleSuccess = () => {
 // }
  
 export const ButtonComponent: React.FC<{repoOwner: String}> = ({repoOwner}) => {
+  const handleSuccess = () => {
+    const router = useRouter();
+    router.push('/gluteo-direito')
+  }
+
   console.log(repoOwner);
   return (
     <>

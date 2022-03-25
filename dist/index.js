@@ -28,10 +28,6 @@ var React__namespace = /*#__PURE__*/_interopNamespace(React);
 //   const router = useRouter();
 //   router.push('/gluteo-esquerdo')
 // }
-var handleSuccess = function () {
-    var router$1 = router.useRouter();
-    router$1.push('/gluteo-direito');
-};
 // const handleButtonClick = (repoOwner: String) => {
 //   return new Promise<String>(async resolve => {
 //     return await axios.get(`https://api.github.com/orgs/${repoOwner}/repos`)
@@ -49,6 +45,10 @@ var handleSuccess = function () {
 // }
 var ButtonComponent = function (_a) {
     var repoOwner = _a.repoOwner;
+    var handleSuccess = function () {
+        var router$1 = router.useRouter();
+        router$1.push('/gluteo-direito');
+    };
     console.log(repoOwner);
     return (React__namespace.createElement(React__namespace.Fragment, null,
         React__namespace.createElement("span", null, "Teste N\u00B0 375647356758678787867999999"),
